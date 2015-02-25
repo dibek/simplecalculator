@@ -1,8 +1,8 @@
 package com.dibellastudios.simplecalculator;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+
+import org.junit.Test;
 
 import com.dibellastudios.simplecalculator.handler.DivisionHandler;
 import com.dibellastudios.simplecalculator.handler.MultiplyHandler;
@@ -15,29 +15,16 @@ import com.dibellastudios.simplecalculator.processor.OperationProcessor;
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
+   
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+  
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+
 
     /**
      * Rigourous Test :-)
      */
+    @Test
     public void MultiplySumSubDiv()
     {
     	Operation baseOperation = new Operation(3);
@@ -59,6 +46,7 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
+    @Test
     public void MultiplyDiv()
     {
     	Operation baseOperation = new Operation(3);
