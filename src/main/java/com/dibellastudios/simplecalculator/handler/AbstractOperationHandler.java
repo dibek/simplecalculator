@@ -9,12 +9,9 @@ public abstract class AbstractOperationHandler implements OperationHandler {
 
 	
 	public AbstractOperationHandler(Operation operation) {
-		if (this.getOperation() == null) {
+		
 			this.operation = operation;
-		}
-		else {
-			this.operation.setAddendum(operation.getAddendum());
-		}
+		
 	}
 	
 	@Override

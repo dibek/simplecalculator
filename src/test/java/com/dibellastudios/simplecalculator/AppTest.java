@@ -38,10 +38,12 @@ public class AppTest
      */
     public void testApp()
     {
+    	Operation baseOperation = new Operation(5);
         OperationProcessor operationProcessor = new OperationProcessor();
-        operationProcessor.addHandler(new SumHandler(new Operation(5)));
-        operationProcessor.addHandler(new MultiplyHandler(new Operation(10)));
-        operationProcessor.addHandler(new SumHandler(new Operation(10)));
+        baseOperation.setAddendum(10);
+        operationProcessor.addHandler(new MultiplyHandler(baseOperation));
+        baseOperation.setAddendum(10);
+        operationProcessor.addHandler(new SumHandler(baseOperation));
         operationProcessor.handleRequest();
         
     }

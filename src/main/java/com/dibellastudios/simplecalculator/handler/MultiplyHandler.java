@@ -9,7 +9,7 @@ public class MultiplyHandler extends AbstractOperationHandler {
 	@Override
 	public void handleRequest(Operation operation) {
 		if (operation.getAddendum() != null && operation.getAddendum().doubleValue() > 0) {
-			if (operation.getBase().doubleValue() > 0) {
+			if (operation.getBase() != null && operation.getBase().doubleValue() > 0) {
 				operation.setResult(operation.getAddendum().doubleValue() * operation.getBase().doubleValue());
 			}
 		}
