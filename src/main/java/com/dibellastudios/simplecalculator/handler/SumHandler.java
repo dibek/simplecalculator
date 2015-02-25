@@ -8,14 +8,16 @@ public class SumHandler extends AbstractOperationHandler {
 
 	@Override
 	public void handleRequest(Operation operation) {
-		if (operation.getAddendum() != null && operation.getAddendum().doubleValue() > 0) {
+		Number addendum = operation.pollAddendum();
+		if (addendum != null && addendum.doubleValue() > 0) {
 			if (operation.getBase() != null && operation.getBase().doubleValue() > 0) {
-				operation.setResult(operation.getAddendum().doubleValue() + operation.getBase().doubleValue());
+				operation.setResult(addendum.doubleValue() + operation.getBase().doubleValue());
 			}
 			else {
-				operation.setResult(operation.getAddendum().doubleValue());
+				operation.setResult(addendum.doubleValue());
 			}
 		}
+		System.out.println("Result sum =" + operation.getBase());
 		nextStep(operation);
 	}
 

@@ -4,8 +4,10 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import com.dibellastudios.simplecalculator.handler.DivisionHandler;
 import com.dibellastudios.simplecalculator.handler.MultiplyHandler;
 import com.dibellastudios.simplecalculator.handler.Operation;
+import com.dibellastudios.simplecalculator.handler.SubtractHandler;
 import com.dibellastudios.simplecalculator.handler.SumHandler;
 import com.dibellastudios.simplecalculator.processor.OperationProcessor;
 
@@ -36,14 +38,39 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void MultiplySumSubDiv()
     {
-    	Operation baseOperation = new Operation(5);
+    	Operation baseOperation = new Operation(3);
+    	 baseOperation.addAddendum(10);
+    	 baseOperation.addAddendum(5);
+    	 baseOperation.addAddendum(2);
+    	 baseOperation.addAddendum(2);
         OperationProcessor operationProcessor = new OperationProcessor();
-        baseOperation.setAddendum(10);
+       
         operationProcessor.addHandler(new MultiplyHandler(baseOperation));
-        baseOperation.setAddendum(10);
+       
         operationProcessor.addHandler(new SumHandler(baseOperation));
+        operationProcessor.addHandler(new SubtractHandler(baseOperation));
+        operationProcessor.addHandler(new DivisionHandler(baseOperation));
+        operationProcessor.handleRequest();
+        
+    }
+    
+    /**
+     * Rigourous Test :-)
+     */
+    public void MultiplyDiv()
+    {
+    	Operation baseOperation = new Operation(3);
+    	 baseOperation.addAddendum(10);
+    	 baseOperation.addAddendum(5);
+    	
+        OperationProcessor operationProcessor = new OperationProcessor();
+       
+        operationProcessor.addHandler(new MultiplyHandler(baseOperation));
+       
+       
+        operationProcessor.addHandler(new DivisionHandler(baseOperation));
         operationProcessor.handleRequest();
         
     }

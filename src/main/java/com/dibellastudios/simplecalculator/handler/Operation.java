@@ -1,17 +1,19 @@
 package com.dibellastudios.simplecalculator.handler;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class Operation {
 
 	Number base;
-	List<Number> listAddendum;
+	Queue<Number> listAddendum;
 
 
 	public Operation(Number addendum) {
-		this.listAddendum = new ArrayList<Number>();
-		listAddendum.add(addendum);
+		this.listAddendum = new LinkedBlockingQueue<Number>();
+		if (base == null){
+			setResult(addendum);
+		}
 	}
 
 	public void setResult(Number result) {
@@ -23,17 +25,22 @@ public class Operation {
 	public Number getBase() {
 		return this.base;
 	}
-	public Number getAddendum(){
-		return this.listAddendum.get(listAddendum.size()-1);
+	public Number pollAddendum(){
+		return this.listAddendum.poll();
 	}
 	
-	public void  setAddendum(Number addendum){
+	public void  addAddendum(Number addendum){
 		this.listAddendum.add(addendum);
 	}
 
 	@Override
 	public String toString() {
 		return "Operation [base=" + base + ", addendum=" + listAddendum + "]";
+	}
+
+	public void setBase(Number base) {
+		this.base = base;
+		
 	}
 	
 	
