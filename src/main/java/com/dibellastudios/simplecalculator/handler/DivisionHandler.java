@@ -1,8 +1,8 @@
 package com.dibellastudios.simplecalculator.handler;
 
-public class SumHandler extends AbstractOperationHandler {
+public class DivisionHandler extends AbstractOperationHandler {
 
-	public SumHandler(Operation operation) {
+	public DivisionHandler(Operation operation) {
 		super(operation);
 	}
 
@@ -11,13 +11,13 @@ public class SumHandler extends AbstractOperationHandler {
 		Number addendum = operation.pollAddendum();
 		if (addendum != null && addendum.doubleValue() > 0) {
 			if (operation.getBase() != null && operation.getBase().doubleValue() > 0) {
-				operation.setResult(addendum.doubleValue() + operation.getBase().doubleValue());
+				operation.setResult(operation.getBase().doubleValue()/addendum.doubleValue() );
 			}
 			else {
 				operation.setResult(addendum.doubleValue());
 			}
 		}
-		System.out.println("Result sum =" + operation.getBase());
+		System.out.println("Result division =" + operation.getBase());
 		nextStep(operation);
 	}
 

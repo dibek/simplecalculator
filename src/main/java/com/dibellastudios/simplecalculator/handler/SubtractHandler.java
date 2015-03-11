@@ -1,9 +1,10 @@
 package com.dibellastudios.simplecalculator.handler;
 
-public class SumHandler extends AbstractOperationHandler {
+public class SubtractHandler extends AbstractOperationHandler {
 
-	public SumHandler(Operation operation) {
+	public SubtractHandler(Operation operation) {
 		super(operation);
+	
 	}
 
 	@Override
@@ -11,14 +12,15 @@ public class SumHandler extends AbstractOperationHandler {
 		Number addendum = operation.pollAddendum();
 		if (addendum != null && addendum.doubleValue() > 0) {
 			if (operation.getBase() != null && operation.getBase().doubleValue() > 0) {
-				operation.setResult(addendum.doubleValue() + operation.getBase().doubleValue());
+				operation.setResult( operation.getBase().doubleValue() - addendum.doubleValue());
 			}
 			else {
 				operation.setResult(addendum.doubleValue());
 			}
 		}
-		System.out.println("Result sum =" + operation.getBase());
+		System.out.println("Result subtract =" + operation.getBase());
 		nextStep(operation);
+
 	}
 
 }

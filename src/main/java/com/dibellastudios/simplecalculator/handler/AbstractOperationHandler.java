@@ -27,7 +27,7 @@ public abstract class AbstractOperationHandler implements OperationHandler {
 	public void nextStep(Operation operation){
 		
 		next.handleRequest(operation);
-		System.out.print(operation);
+		//System.out.println(operation);
 	}	
 
 }

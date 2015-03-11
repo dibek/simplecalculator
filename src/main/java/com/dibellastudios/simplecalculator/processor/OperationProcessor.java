@@ -4,11 +4,9 @@ import com.dibellastudios.simplecalculator.handler.OperationHandler;
 
 public class OperationProcessor {
 
-	
 	OperationHandler baseHandler;
 	OperationHandler lastHandler;
-	
-	
+
 	public OperationProcessor() {
 	}
 
@@ -22,7 +20,9 @@ public class OperationProcessor {
 	}
 
 	public void handleRequest() {
-		baseHandler.handleRequest(baseHandler.getOperation());
+		if (baseHandler != null) {
+			baseHandler.handleRequest(baseHandler.getOperation());
+		}
 	}
-	
+
 }
