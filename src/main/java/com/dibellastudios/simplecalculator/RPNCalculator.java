@@ -21,18 +21,22 @@ public class RPNCalculator {
 		   for (Object obj : rpnValues) {
 			   if (obj.toString().toLowerCase().equals("add")) {
 				   double result = linkedList.pollFirst() + linkedList.pollFirst();
+				   System.out.println("Result sum " + result);
 				   linkedList.addFirst(result);
 			   }
 			   else if (obj.toString().toLowerCase().equals("multiply")) {
 				   double result = linkedList.pollFirst() * linkedList.pollFirst();
+				   System.out.println("Result multiply " + result);
 				   linkedList.addFirst(result);
 			   }
 			   else if (obj.toString().toLowerCase().equals("divide")) {
 				   double result = linkedList.pollFirst() / linkedList.pollFirst();
+				   System.out.println("Result divide " + result);
 				   linkedList.addFirst(result);
 			   }
 			   else if (obj.toString().toLowerCase().equals("subtract")) {
 				   double result = linkedList.pollFirst() - linkedList.pollFirst();
+				   System.out.println("Result subtract " + result);
 				   linkedList.addFirst(result);
 			   }
 			   else {
