@@ -1,0 +1,13 @@
+com\dibellastudios\simplecalculator\handler\MultiplyHandler.class
+com\dibellastudios\simplecalculator\handler\SubtractHandler.class
+com\dibellastudios\simplecalculator\handler\OperationHandler.class
+com\dibellastudios\simplecalculator\App.class
+com\dibellastudios\simplecalculator\handler\Operation.class
+com\dibellastudios\simplecalculator\processor\OperationProcessor.class
+com\dibellastudios\simplecalculator\processor\FileProcessor.class
+com\dibellastudios\simplecalculator\handler\DivisionHandler.class
+com\dibellastudios\simplecalculator\handler\SumHandler.class
+com\dibellastudios\simplecalculator\processor\FileProcessor$EnumOperation.class
+com\dibellastudios\simplecalculator\processor\FileProcessor$1.class
+com\dibellastudios\simplecalculator\handler\AbstractOperationHandler.class
+com\dibellastudios\simplecalculator\handler\NullHandler.class
