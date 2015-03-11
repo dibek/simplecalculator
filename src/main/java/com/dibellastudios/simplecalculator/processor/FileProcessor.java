@@ -13,6 +13,7 @@ import com.dibellastudios.simplecalculator.handler.Operation;
 
 /**
  * This class is using the new Java7 notation for loading a file
+ * 
  * @author giuseppe
  *
  */
@@ -26,6 +27,7 @@ public class FileProcessor {
 
 	/**
 	 * Using the CoR pattern
+	 * 
 	 * @return
 	 */
 	public Number processFileWithCoR() {
@@ -41,8 +43,8 @@ public class FileProcessor {
 			for (String myLine : lines) {
 
 				if (myLine != null) {
-					OperationUtil.extraxtOperationFromLineCoR(myLine, operation,
-							operationProcessor);
+					OperationUtil.extraxtOperationFromLineCoR(myLine,
+							operation, operationProcessor);
 				}
 
 			}
@@ -56,9 +58,10 @@ public class FileProcessor {
 		return result;
 
 	}
-	
+
 	/**
 	 * Using the RPN Calculator
+	 * 
 	 * @return
 	 */
 	public Number processFileWithRPN() {
@@ -69,30 +72,36 @@ public class FileProcessor {
 		try {
 			lines = Files.readAllLines(path, Charset.defaultCharset());
 
-			List<Object> listOperations =  new ArrayList<Object>();
+			List<Object> listOperations = new ArrayList<Object>();
 			for (String myLine : lines) {
 
 				if (myLine != null) {
-					OperationUtil.extraxtOperationFromLineRPN(myLine, listOperations);
+					OperationUtil.extraxtOperationFromLineRPN(myLine,
+							listOperations);
 				}
 
 			}
-			RPNCalculator rpnCalculator =  new RPNCalculator(listOperations);
+			RPNCalculator rpnCalculator = new RPNCalculator(listOperations);
 
 			result = rpnCalculator.execute();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return result;
 	}
+
 	public static void main(String[] args) {
 		FileProcessor fileProcessor = new FileProcessor(
 				"/home/giuseppe/Documents/Personal/workspace/simplecalculator/src/main/resources/myCalcFile.txt");
-		System.out.println("Using the CoR calculator " + fileProcessor.processFileWithCoR());
-		System.out.println("Using the RPN calculator " + fileProcessor.processFileWithRPN());
-		
-	}
+		System.out.println("Using the CoR calculator "
+				+ fileProcessor.processFileWithCoR());
+		System.out.println("Using the RPN calculator "
+				+ fileProcessor.processFileWithRPN());
 
+	}
 
 }

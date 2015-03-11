@@ -3,6 +3,16 @@ package com.dibellastudios.simplecalculator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.lang.math.NumberUtils;
+
+/**
+ * This simple Calculator class uses a Reverse Polish Notation 
+ * It is using a stack and retrieve the number and related operations.
+ * The element remaining in the stack  is the result of the operations.
+ * The operation permitted in this case are add/multiply/divide/subtract
+ * @author giuseppe
+ *
+ */
 public class RPNCalculator {
 
 	
@@ -13,7 +23,7 @@ public class RPNCalculator {
 		this.listOperations = listOperations;
 	}
 	
-	public Number execute() {
+	public Number execute() throws Exception {
 		
 		 LinkedList<Double> linkedList = new LinkedList<Double>();
 		    
@@ -39,11 +49,14 @@ public class RPNCalculator {
 				   System.out.println("Result subtract " + result);
 				   linkedList.addFirst(result);
 			   }
-			   else {
+			   else if (NumberUtils.isNumber(obj.toString())){
 				   linkedList.add(Double.valueOf(obj.toString()));
 			   }
+			   else {
+				   throw new Exception("Command not valid");
+			   }
 		   }
-		   System.out.println(linkedList);
+		   //System.out.println(linkedList);
 		   return linkedList.getFirst();
 	}
 }

@@ -52,9 +52,10 @@ public class AppTest
     
     /**
      * Using the RPN Calculator
+     * @throws Exception 
      */
     @Test
-    public void MultiplySumSubDivRPN() {
+    public void MultiplySumSubDivRPN() throws Exception {
     	Object[] arrayOperations = {3,10,EnumOperation.MULTIPLY,5,EnumOperation.ADD,2,EnumOperation.SUBTRACT,2,EnumOperation.DIVIDE};
     	List<Object> listOperations = Arrays.asList(arrayOperations);
     	RPNCalculator rpnCalculator =  new RPNCalculator(listOperations);
@@ -87,12 +88,81 @@ public class AppTest
     
     /**
      * Using the RPN Calculator
+     * @throws Exception 
      */
     @Test
-    public void MultiplyDivRPN() {
+    public void MultiplyDivRPN() throws Exception {
     	Object[] arrayOperations = {3,10,EnumOperation.MULTIPLY,5,EnumOperation.DIVIDE};
     	List<Object> listOperations = Arrays.asList(arrayOperations);
     	RPNCalculator rpnCalculator =  new RPNCalculator(listOperations);
     	 assertTrue("6 expected", rpnCalculator.execute().intValue() == 6);
+    }
+    
+    
+    /**
+     * Using the CoR calculator 
+     */
+    @Test
+    public void MultiplyMultiplyDivCoR()
+
+
+    {
+    	Operation baseOperation = new Operation(3);
+    	 baseOperation.addAddendum(10);
+    	 baseOperation.addAddendum(10);
+    	 baseOperation.addAddendum(5);
+    	
+        OperationProcessor operationProcessor = new OperationProcessor();
+       
+        operationProcessor.addHandler(new MultiplyHandler(baseOperation));
+        operationProcessor.addHandler(new MultiplyHandler(baseOperation));
+       
+        operationProcessor.addHandler(new DivisionHandler(baseOperation));
+        operationProcessor.handleRequest();
+        assertTrue("60 expected", baseOperation.getBase().intValue() == 60);
+        
+    }
+    
+    /**
+     * Using the RPN Calculator
+     * @throws Exception 
+     */
+    @Test
+    public void MultiplyMultiplyDivRPN() throws Exception {
+    	Object[] arrayOperations = {3,10,EnumOperation.MULTIPLY,10,EnumOperation.MULTIPLY, 5,EnumOperation.DIVIDE};
+    	List<Object> listOperations = Arrays.asList(arrayOperations);
+    	RPNCalculator rpnCalculator =  new RPNCalculator(listOperations);
+    	 assertTrue("60 expected", rpnCalculator.execute().intValue() == 60);
+    }
+    
+    /**
+     * Using the CoR calculator 
+     */
+    @Test
+    public void NoOperationCoR()
+
+
+    {
+    	Operation baseOperation = new Operation(3);
+    	
+    	
+        OperationProcessor operationProcessor = new OperationProcessor();
+       
+       
+        operationProcessor.handleRequest();
+        assertTrue("3 expected", baseOperation.getBase().intValue() == 3);
+        
+    }
+    
+    /**
+     * Using the RPN Calculator
+     * @throws Exception 
+     */
+    @Test
+    public void NoOperationRPN() throws Exception {
+    	Object[] arrayOperations = {3};
+    	List<Object> listOperations = Arrays.asList(arrayOperations);
+    	RPNCalculator rpnCalculator =  new RPNCalculator(listOperations);
+    	 assertTrue("3 expected", rpnCalculator.execute().intValue() == 3);
     }
 }
