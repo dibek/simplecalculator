@@ -1,0 +1,23 @@
+add 10
+multiply 3 
+divide 2 
+add 10
+multiply 3 
+divide 2 
+add 10
+multiply 3 
+divide 2 
+add 10
+multiply 3 
+divide 2 
+add 10
+multiply 3 
+divide 2 
+add 10
+multiply 3 
+divide 2 
+add 10
+multiply 3 
+divide 2 
+apply 5
+
