@@ -85,9 +85,7 @@ public class FileProcessor {
 			e.printStackTrace();
 		}
 		return result;
-
 	}
-
 	public static void main(String[] args) {
 		FileProcessor fileProcessor = new FileProcessor(
 				"/home/giuseppe/Documents/Personal/workspace/simplecalculator/src/main/resources/myCalcFile.txt");
@@ -95,5 +93,6 @@ public class FileProcessor {
 		System.out.println("Using the RPN calculator " + fileProcessor.processFileWithRPN());
 		
 	}
+
 
 }

@@ -2,7 +2,7 @@ package com.dibellastudios.simplecalculator;
 
 
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -59,6 +59,7 @@ public class AppTest
     	List<Object> listOperations = Arrays.asList(arrayOperations);
     	RPNCalculator rpnCalculator =  new RPNCalculator(listOperations);
     	assertTrue("16,5 expected",rpnCalculator.execute().doubleValue() == 16.5);
+
     }
     
     /**
@@ -66,6 +67,8 @@ public class AppTest
      */
     @Test
     public void MultiplyDivCoR()
+
+
     {
     	Operation baseOperation = new Operation(3);
     	 baseOperation.addAddendum(10);
