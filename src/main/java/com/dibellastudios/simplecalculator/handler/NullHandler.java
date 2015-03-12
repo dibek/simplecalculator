@@ -1,5 +1,10 @@
 package com.dibellastudios.simplecalculator.handler;
 
+/**
+ * Special handler for end of the chain
+ * @author giuseppe
+ *
+ */
 public class NullHandler implements OperationHandler {
 
 	@Override

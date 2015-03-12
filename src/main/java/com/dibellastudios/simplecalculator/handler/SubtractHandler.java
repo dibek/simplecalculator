@@ -1,5 +1,10 @@
 package com.dibellastudios.simplecalculator.handler;
 
+/**
+ * Handler for the subtract operation
+ * @author giuseppe
+ *
+ */
 public class SubtractHandler extends AbstractOperationHandler {
 
 	public SubtractHandler(Operation operation) {

@@ -10,6 +10,11 @@ import com.dibellastudios.simplecalculator.handler.Operation;
 import com.dibellastudios.simplecalculator.handler.SubtractHandler;
 import com.dibellastudios.simplecalculator.handler.SumHandler;
 
+/**
+ * Utility class to use the calculators (both RPN and COR)
+ * @author giuseppe
+ *
+ */
 public class OperationUtil {
 
 	public enum EnumOperation {

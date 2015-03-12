@@ -1,5 +1,10 @@
 package com.dibellastudios.simplecalculator.handler;
 
+/**
+ * Handler for the multiply operation
+ * @author giuseppe
+ *
+ */
 public class MultiplyHandler extends AbstractOperationHandler {
 
 	public MultiplyHandler(Operation operation) {

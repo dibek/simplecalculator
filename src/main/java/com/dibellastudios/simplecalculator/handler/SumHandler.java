@@ -1,5 +1,11 @@
 package com.dibellastudios.simplecalculator.handler;
 
+/**
+ * 
+ * Handler for the sum operation
+ * @author giuseppe
+ *
+ */
 public class SumHandler extends AbstractOperationHandler {
 
 	public SumHandler(Operation operation) {

@@ -2,6 +2,10 @@ package com.dibellastudios.simplecalculator.handler;
 
 public class DivisionHandler extends AbstractOperationHandler {
 
+	/**
+	 * Handler for the divide operation
+	 * @param operation
+	 */
 	public DivisionHandler(Operation operation) {
 		super(operation);
 	}

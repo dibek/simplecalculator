@@ -28,6 +28,14 @@ public class AppTest
 
 
     /**
+     * Just an example of the logic applied to a real ATDD
+     * Scenario : Multiply then Sum  then Subtract then divide
+     * Given Starting Number 3
+     * When multiply 10
+     * When add 5
+     * When subtract 2
+     * When divide 2
+     * Then result 16.5
      * Using the CoR calculator 
      */
     @Test
@@ -51,6 +59,16 @@ public class AppTest
     
     
     /**
+     * Just an example of the logic applied to a real ATDD
+     * 
+     * Scenario : Multiply then Sum  then Subtract then divide
+     * Given Starting Number 3
+     * When multiply 10
+     * When add 5
+     * When subtract 2
+     * When divide 2
+     * Then result 16.5
+     * 
      * Using the RPN Calculator
      * @throws Exception 
      */

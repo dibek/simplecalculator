@@ -5,7 +5,8 @@ import java.io.File;
 import com.dibellastudios.simplecalculator.processor.FileProcessor;
 
 /**
- * Hello world!
+ * Entry point for the application using the -jar command
+ * Example usage : java -jar simplecalculator.jar path_to_file 
  *
  */
 public class App

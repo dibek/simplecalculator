@@ -1,8 +1,13 @@
 package com.dibellastudios.simplecalculator.handler;
 
+import java.util.LinkedList;
 import java.util.Queue;
-import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * Pojo for data operations
+ * @author giuseppe
+ *
+ */
 public class Operation {
 
 	Number base;
@@ -10,7 +15,7 @@ public class Operation {
 
 
 	public Operation(Number addendum) {
-		this.listAddendum = new LinkedBlockingQueue<Number>();
+		this.listAddendum = new LinkedList<Number>();
 		if (base == null){
 			setResult(addendum);
 		}
